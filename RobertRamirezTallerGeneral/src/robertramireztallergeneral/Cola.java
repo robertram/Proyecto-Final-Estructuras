@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author robertramirez
  */
-public class Cola {
+public class Cola { //Hola soy Robert
 
     public int consolasPedidas = 0;
     private NodoCola frente, ultimo;
