@@ -3,8 +3,11 @@ package libreriainternacional;
 public class Cola {
 
     private NodoCola frente, ultimo;
-    Object cola[] = new Object[15]; //15 elementos se utilizarán
-    int libro = 0;
+    //Object cola[] = new Object[15]; //15 elementos se utilizarán
+
+    Cola cola = new Cola();
+
+    int Cantlibros = 0;
 
     //ATRAS, es el que los une
     //EL SET, me permite fijar y cambiar informacion
@@ -18,6 +21,7 @@ public class Cola {
             ultimo.setAtras(aux);//Indicar a último que va a tener atras al Nodo auxiliar (Unión de EPA-WALMART)
             ultimo = aux; //ahora el ultimo va a hacer auxiliar, de esta forma lo señalo
         }
+        System.out.println(cola);
     }
 
     public NodoCola atiende() {
@@ -39,6 +43,7 @@ public class Cola {
     }
 
     public NodoCola atiendeCola() {
+        /*
         NodoCola aux = frente;
         if (aux != null) {
             if (libro > 0) {
@@ -49,6 +54,16 @@ public class Cola {
                 libro--;
             }
         }
+        return aux;*/
+        NodoCola aux = frente;
+        if (aux != null) {
+            frente = frente.getAtras();
+            aux.setAtras(null);
+            if (frente == null) {
+                ultimo = null;
+            }
+        }
+        return aux;
     }
 
     public String toString() { //inspecciono la cola (internamente) sin eliminar
@@ -61,28 +76,30 @@ public class Cola {
         return s; //retorno s
     }
 
+    /*
     public void Push(String a) {
         if (libro < 15) {
             cola[libro] = a;
             libro++;
         }
-    }
+    }*/
 
     public String VerCola() {
         String s = "";
-        if (libro == 0) {
+        if (Cantlibros == 0) {
             s = "Elementos: ";
         } else {
-            for (int j = 0; j < libro; j++) {
+            for (int j = 0; j < Cantlibros; j++) {
                 s += ("Libro: " + (j + 1) + " " + cola[j] + "\n");
             }
         }
         return s;
+
     }
 
     public String Elementos() {
         String elementos = "";
-        elementos = ("Cantidad de libros: " + libro);
+        elementos = ("Cantidad de libros: " + Cantlibros);
         return elementos;
     }
 
@@ -99,7 +116,7 @@ public class Cola {
     public String Ultimo() {
         String ultimo = " ";
         if (cola[0] != null) {
-            ultimo = ("Último: " + cola[libro - 1]);
+            ultimo = ("Último: " + cola[Cantlibros - 1]);
         } else {
             ultimo = ("No hay elementos");
         }
@@ -107,9 +124,9 @@ public class Cola {
     }
 
     public void VaciarCola() {
-        for (int m = libro - 1; m >= 0; m--) {
+        for (int m = Cantlibros - 1; m >= 0; m--) {
             cola[m] = null;
-            libro = 0;
+            Cantlibros = 0;
         }
     }
 }

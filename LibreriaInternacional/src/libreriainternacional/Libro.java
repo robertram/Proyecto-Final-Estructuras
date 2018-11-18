@@ -9,7 +9,7 @@ public class Libro {
     private int publicacion, cantidadDisponible;
     
 
-    public Libro(String nombreLibro, String autor, int publicacion, int cantidadDisponible) {
+    public Libro(String nombreLibro, String autor) {
         this.nombreLibro = nombreLibro;
         this.autor = autor;
         this.publicacion = publicacion;

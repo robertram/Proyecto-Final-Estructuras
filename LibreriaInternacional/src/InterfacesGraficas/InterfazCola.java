@@ -27,6 +27,8 @@ public class InterfazCola extends javax.swing.JFrame {
         lb1 = new javax.swing.JLabel();
         lb7 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,13 +83,20 @@ public class InterfazCola extends javax.swing.JFrame {
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/White.png"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void pushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pushActionPerformed
         // TODO add your handling code here:
         if (!txtIntroduce.getText().equals("")) {
-            cola.Push(txtIntroduce.getText());
+            //cola.Push(txtIntroduce.getText());
+            cola.encola(new Libro(txtIntroduce.getText(), "Robert"));
             act();
         }
 
@@ -160,6 +169,8 @@ public class InterfazCola extends javax.swing.JFrame {
     private javax.swing.JLabel Fondo;
     private javax.swing.JScrollPane JScrollPane;
     private javax.swing.JTextArea area;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lb1;
     private javax.swing.JLabel lb2;
     private javax.swing.JLabel lb3;
