@@ -17,8 +17,7 @@ public class Cola { //Hola soy Robert
     public int consolasPedidas = 0;
     private NodoCola frente, ultimo;
 
-    public NodoCola pop(NodoCola n) {
-        int i = 0;
+    public NodoCola pop() {
         NodoCola aux = frente;
         if (aux != null) {
             frente = frente.getAtras();
